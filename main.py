@@ -4,6 +4,7 @@ import argparse
 import os
 import shutil
 import re
+import tomli
 
 def process_file_content(content):
     lines = content.split("\n")
@@ -118,6 +119,7 @@ def main():
     parser.add_argument('path', nargs='?', help='path to the file or folder to be processed')
     parser.add_argument('--version', '-v', action='store_true', help='print the tool\'s name and version')
     parser.add_argument('--output', '-o', default='./tml/examples', help='Specify a different output directory')
+    parser.add_argument("--config", "-c", help="path to a TOML config file to be used as a config for the HTML files")
 
 
     args = parser.parse_args()
